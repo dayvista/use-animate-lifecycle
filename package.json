@@ -1,0 +1,48 @@
+{
+  "name": "use-animate-lifecycle",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dayvista/use-animate-lifecycle.git"
+  },
+  "keywords": [
+    "hooks",
+    "react",
+    "framer",
+    "animation",
+    "animate",
+    "exit"
+  ],
+  "author": "Liam Davis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dayvista/use-animate-lifecycle/issues"
+  },
+  "homepage": "https://github.com/dayvista/use-animate-lifecycle#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.9",
+    "@babel/preset-react": "^7.14.5",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "framer-motion": "^4.1.17",
+    "prettier": "^2.3.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rollup": "^2.55.1",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "peerDependencies": {
+    "framer-motion": ">=2.0.0",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  }
+}
