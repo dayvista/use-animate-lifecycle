@@ -10,20 +10,16 @@ import { usePresence } from 'framer-motion'
 // TODO: generally follow this tutorial to ultimately publish this package:
 //       https://www.codifytools.com/blog/react-npm-package
 
-export const useAnimateLifecycle = ({ delay }) => {
-  const duration = delay ? delay : 0
+export const useAnimateLifecycle = (delay = 500) => {
+  // beginning of lifecycle
+  const [isVisible, setIsVisible] = useState(false)
+  useEffect(() => setTimeout(() => setIsVisible(true), delay), [])
 
+  // end of lifecycle
   const [isPresent, safeToRemove] = usePresence()
   useEffect(() => {
-    if (!isPresent && safeToRemove) {
-      setTimeout(safeToRemove, duration)
-    }
-  }, [isPresent, safeToRemove, duration])
-
-  const [isVisible, setIsVisible] = useState(false)
-  useEffect(() => {
-    setTimeout(() => setIsVisible(true), duration)
-  }, [duration])
+    !isPresent && setTimeout(safeToRemove, delay)
+  }, [isPresent, safeToRemove])
 
   return isVisible && isPresent
 }
